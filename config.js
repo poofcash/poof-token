@@ -120,17 +120,6 @@ module.exports = {
         symbol: 'USDC',
         decimals: 6,
       },
-      cusdc: {
-        instanceAddress: {
-          5000: '0xaEaaC358560e11f52454D997AAFF2c5731B6f8a6',
-          50000: '0x1356c899D8C9467C7f71C195612F8A395aBf2f0a',
-          500000: '0xA60C772958a3eD56c1F15dD055bA37AC8e523a0D',
-          5000000: undefined,
-        },
-        tokenAddress: '0x39AA39c021dfbaE8faC545936693aC917d5E7563',
-        symbol: 'cUSDC',
-        decimals: 8,
-      },
       usdt: {
         instanceAddress: {
           100: '0x169AD27A470D064DEDE56a2D3ff727986b15D52B',
