@@ -168,7 +168,7 @@ module.exports = {
       usdc: {
         instanceAddress: {
           100: '0x05E0b5B40B7b66098C2161A5EE11C5740A3A7C45',
-          1000: '0xd8D7DE3349ccaA0Fde6298fe6D7b7d0d34586193',
+          1000: '0x23173fE8b96A4Ad8d2E17fB83EA5dcccdCa1Ae52',
           10000: undefined,
           100000: undefined,
         },
