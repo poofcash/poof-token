@@ -1,9 +1,9 @@
 {
-  "name": "torn-token",
+  "name": "poof-token",
   "version": "1.0.3",
   "main": "config.js",
-  "repository": "https://github.com/tornadocash/torn-token.git",
-  "author": "Tornadocash team <hello@tornado.cash>",
+  "repository": "https://github.com/poofcash/poof-token.git",
+  "author": "Brian Li <brnli7@gmail.com>",
   "license": "MIT",
   "files": [
     "config.js",
