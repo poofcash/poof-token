@@ -80,6 +80,7 @@ module.exports = {
       celo: {
         instanceAddress: {
           '0.1': '0xBdD116cF6B447d038B83b018a1E3f044163b6b44',
+          '1': '0xe6feF027AA4ad9675CB32c1718490023b8D4a971',
         },
         tokenAddress: "0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9",
         symbol: 'CELO',
