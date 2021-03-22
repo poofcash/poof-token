@@ -76,6 +76,22 @@ module.exports = {
     },
   },
   instances: {
+    netId42220: {
+      celo: {
+        instanceAddress: {
+          '0.1': '0xBdD116cF6B447d038B83b018a1E3f044163b6b44',
+          '1': '0x3eE407835492fa38Fac8Ba47298003d50Ea43f7f',
+          '10': '0x3186AD66eE2047e3Fb278f87844e3BC01D9D382a',
+          '100': '0x7bEdF15c8680D353AFDb1261f20D16802765f8c6',
+          '1000': '0x4338C5F5B4b339D6E3e6bFb944647b36a6348fc6',
+          '10000': '0x914Cd0f5987a43271e173E40Ee3F23C88D28eeA1',
+          '100000': '0xCB6b9b4b2D519c0ADdE2142Cc695464c39369aB4',
+        },
+        tokenAddress: "0x471ece3750da237f93b8e339c536989b8978a438",
+        symbol: 'CELO',
+        decimals: 18
+      },
+    },
     netId44787: {
       celo: {
         instanceAddress: {
