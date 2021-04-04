@@ -87,7 +87,7 @@ module.exports = {
     netId42220: {
       celo: {
         instanceAddress: {
-          '0.1': '0xC8980dcBc56F5CEdd5356D190cB42125e16486eb',
+          '0.1': '0xbf390dA0296F14ACda3C9A0C59000eB1fac1E62c',
           '1': '0xD39697c01279DfaCad50b27D03EDAEc6Bca03097',
           '10': '0xAB0931522889cD50b3519b24a2d74c825b1A3adC',
           '100': '0xB6b10B5f276AF5c0eE5dC46e4083c3DE3bF017c7',

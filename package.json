@@ -1,6 +1,6 @@
 {
   "name": "poof-token",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "config.js",
   "repository": "https://github.com/poofcash/poof-token.git",
   "author": "Brian Li <brnli7@gmail.com>",
