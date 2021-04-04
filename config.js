@@ -75,17 +75,22 @@ module.exports = {
       duration: 60,
     },
   },
+  feeManager: {
+    netId42220: {
+      address: '0x7d21531Adf9d029Acc8C5b225d77Ce2a819887B6',
+    },
+    netId44787: {
+      address: '0x13F0c38ee3BBfFe7f18Dbbb4D647853066B5129e',
+    }
+  },
   instances: {
     netId42220: {
       celo: {
         instanceAddress: {
-          '0.1': '0x89c8BB50BBa5B15B5044bdA870d1c34322B66171',
-          '1': '0xCc5951C9bF5e65a5114Ae759E5B55ad3AB095176',
-          '10': '0x86FEFc3b3d4e82032A13ce41A2590dd666987780',
-          '100': '0x8A281116D0EFCc36cd038AbD4f7b117489D62AA7',
-          '1000': '0x40DDBB4C0a0d3BD0835CA510cC941549cE2B7485',
-          '10000': '0xf1aA668d21Fe0560Af8d2B25047711FE70790B9d',
-          '100000': '0x0824C3Ed3bF48E5A0dB14c36a1fa44D68f0D79AC',
+          '0.1': '0xC8980dcBc56F5CEdd5356D190cB42125e16486eb',
+          '1': '0xD39697c01279DfaCad50b27D03EDAEc6Bca03097',
+          '10': '0xAB0931522889cD50b3519b24a2d74c825b1A3adC',
+          '100': '0xB6b10B5f276AF5c0eE5dC46e4083c3DE3bF017c7',
         },
         tokenAddress: "0x471ece3750da237f93b8e339c536989b8978a438",
         symbol: 'CELO',
@@ -95,13 +100,10 @@ module.exports = {
     netId44787: {
       celo: {
         instanceAddress: {
-          '0.1': '0xa1A05Eda0A329d8143B1Fe4fAA5e89e125c51bD6',
-          '1': '0xe6feF027AA4ad9675CB32c1718490023b8D4a971',
-          '10': '0xa09cdd95727a14ab23bdF177eD261FAC2269B2b4',
-          '100': '0x44CEb532cD33735B9E0bc3C0C5d3ef7fb4068469',
-          '1000': '0x279d401EaB667c76428C13ed3D0290bE95a48a67',
-          '10000': '0x97Ad21b2A685Ead3ab42f2eD45222cf9e46c4570',
-          '100000': '0xe3B6F20620b5B9f537A47F61150a11C3761BFC6D',
+          '0.1': '0xd132e4bd577Ea524CFEa481B41c6feDEfee2f891',
+          '1': '0xbb49f367b55b0196312b35F0f01BB12Cd01DeF81',
+          '10': '0xFc1107640BB9490F44CBC2D006aA7B8D0B2cC14A',
+          '100': '0x38A120F95873755bD33124b214370792AC2D8fDC',
         },
         tokenAddress: "0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9",
         symbol: 'CELO',
