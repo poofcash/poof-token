@@ -100,10 +100,9 @@ module.exports = {
     netId44787: {
       celo: {
         instanceAddress: {
-          '0.1': '0xa330bbD9462a22E32710AD035A344fBa6D04271b',
-          '1': '0x3C9C366D94f16F2A40060a5b68F9F0018EEd03f9',
-          '10': '0xf1B44E843bdA2396c4e4829B59c80853D373B0B0',
-          '100': '0x9338C1E788AaD48D7E6316cEB13601Df6abc2440',
+          '0.1': '0x9c3b1EA46dE88f2601cf94D65A1Ccf45BDf75ddB',
+          '1': '0x6D6c519F9Fe80C8F0bC37570e85Fb1c42f963695',
+          '10': '0xfd3137b3358ba7f1DEc3bFaD0fFFc058ADb4Bbe1',
         },
         tokenAddress: "0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9",
         symbol: 'CELO',
