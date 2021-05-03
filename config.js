@@ -87,10 +87,10 @@ module.exports = {
     netId42220: {
       celo: {
         instanceAddress: {
-          '0.1': '0x0849cD407eE9A37ae7471cD5a0D7dbb6CD27EDAC',
-          '1': '0x34EedcB5e056A8f425D0bc37a6804dA41afa0a38',
-          '10': '0x20c1e0758B2D881495ca2B2337f175dD6d3Cd333',
-          '100': '0xD368d1195dE89f189641B9609273e10248A7B641',
+          '0.1': '0xD3a07CdC50F4D7C6735783E72a8d3016C2A35F42',
+          '1': '0xFF81b5492019B4DF3f8DB3Ba55aa1c1F2c7a747d',
+          '10': '0x0b35A116B68860101bcD3bB4E1138aF684a0C66D',
+          '100': '0x9F5431380c04F80f07Bd7DB7785491Fe825084D1',
         },
         tokenAddress: "0x471ece3750da237f93b8e339c536989b8978a438",
         symbol: 'CELO',
@@ -100,9 +100,8 @@ module.exports = {
     netId44787: {
       celo: {
         instanceAddress: {
-          '0.1': '0x9c3b1EA46dE88f2601cf94D65A1Ccf45BDf75ddB',
-          '1': '0x6D6c519F9Fe80C8F0bC37570e85Fb1c42f963695',
-          '10': '0xfd3137b3358ba7f1DEc3bFaD0fFFc058ADb4Bbe1',
+          '0.1': '0x4D74124b70Dc84dc6828FCF5FB3B9d205ec52C03',
+          '1': '0x61BADEbF571E302c51a40bB6b5A4E5963d990ab2',
         },
         tokenAddress: "0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9",
         symbol: 'CELO',
