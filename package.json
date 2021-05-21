@@ -38,7 +38,8 @@
     "truffle-plugin-verify": "^0.3.11"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/contracts": "^4.1.0",
+    "@ubeswap/governance": "git+https://github.com/Ubeswap/ubeswap-governance.git",
     "eth-sig-util": "^2.5.3",
     "ethereumjs-util": "^7.0.3",
     "web3": "^1.2.11"

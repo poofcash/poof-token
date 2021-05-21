@@ -1,9 +1,9 @@
 const {toWei} = require('web3-utils')
 
 module.exports = {
-  torn: {
+  poof: {
     address: 'torn.contract.tornadocash.eth',
-    cap: toWei('10000000'),
+    cap: toWei('100000000'),
     pausePeriod: 45 * 24 * 3600, // 45 days
     distribution: {
       airdrop: {to: 'voucher', amount: toWei('500000')},

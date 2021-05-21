@@ -3,8 +3,8 @@ require('chai').use(require('bn-chai')(web3.utils.BN)).use(require('chai-as-prom
 
 const { takeSnapshot, revertSnapshot } = require('../scripts/ganacheHelper')
 const Airdrop = artifacts.require('./AirdropMock.sol')
-const Torn = artifacts.require('./TORNMock.sol')
-const { cap } = require('../config').torn
+const Poof = artifacts.require('./POOFMock.sol')
+const { cap } = require('../config').poof
 const { toBN, toWei } = require('web3-utils')
 const RLP = require('rlp')
 
@@ -39,7 +39,7 @@ async function deploySefldestruct(contract, args, deployerPK) {
 }
 
 contract('Airdrop', (accounts) => {
-  let torn
+  let poof
   let snapshotId
   const airdropDeployer = accounts[8]
   const deployerPK = '0x0f62d96d6675f32685bbdb8ac13cda7c23436f63efbb9d07700d8669ff12b7c4'
@@ -49,7 +49,8 @@ contract('Airdrop', (accounts) => {
 
   before(async () => {
     const newAddr = await getNextAddr(airdropDeployer)
-    torn = await Torn.new(accounts[0], 0, [{ to: newAddr, amount: cap }])
+    poof = await Poof.new(accounts[0])
+    poof.transfer(newAddr, cap)
     snapshotId = await takeSnapshot()
   })
   describe('#airdrop', () => {
@@ -58,7 +59,7 @@ contract('Airdrop', (accounts) => {
       await deploySefldestruct(
         Airdrop,
         [
-          torn.address,
+          poof.address,
           [
             { to: recipient1, amount: half },
             { to: recipient2, amount: half },
@@ -67,8 +68,8 @@ contract('Airdrop', (accounts) => {
         deployerPK,
       )
 
-      const bal1 = await torn.balanceOf(recipient1)
-      const bal2 = await torn.balanceOf(recipient2)
+      const bal1 = await poof.balanceOf(recipient1)
+      const bal2 = await poof.balanceOf(recipient2)
 
       bal1.should.eq.BN(toBN(half))
       bal2.should.eq.BN(toBN(half))
@@ -76,7 +77,7 @@ contract('Airdrop', (accounts) => {
 
     // todo: how do we get the same deployed address without create2?
     // it('should throw on second attempt', async () => {
-    //   await Airdrop.new(torn.address, [accounts[1], accounts[2]], [half, half], { from: airdropDeployer })
+    //   await Airdrop.new(poof.address, [accounts[1], accounts[2]], [half, half], { from: airdropDeployer })
     // })
   })
 
