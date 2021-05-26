@@ -9,7 +9,7 @@ contract POOF is TransferrableVotingToken {
   uint96 public constant MAX_SUPPLY = 100_000_000e18;
 
   /**
-   * @notice Construct a new Ube token
+   * @notice Construct a new POOF token
    * Note: this contract doesn't specify an initial minter, so there is no way new
    * tokens can get created.
    * @param _initialOwner The initial account to grant all the tokens

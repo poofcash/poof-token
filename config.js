@@ -6,15 +6,22 @@ module.exports = {
     cap: toWei('100000000'),
     pausePeriod: 45 * 24 * 3600, // 45 days
     distribution: {
-      airdrop: {to: 'voucher', amount: toWei('500000')},
+      airdrop: {to: 'voucher', amount: toWei('600000')},
       miningV2: {to: 'rewardSwap', amount: toWei('42000000')},
-      governance: {to: 'vesting.governance', amount: toWei('25400000')},
+      governance: {to: 'vesting.governance', amount: toWei('27400000')},
       team1: {to: 'vesting.team1', amount: toWei('15000000')},
       team2: {to: 'vesting.team2', amount: toWei('15000000')},
     },
   },
-  governance: {address: ''},
+  airdrop: {
+    weights: {
+      POOF: 10,
+      LOCKED_GOLD: 5,
+      TORNADO: 4,
+    }
+  },
   governanceImpl: {address: ''},
+  timelockGov: {address: ''},
   voucher: {address: '', duration: 6},
   miningV2: {
     address: '',
@@ -22,10 +29,11 @@ module.exports = {
     periodDurationInSeconds: 15724800,
     numPeriods: 6,
     rates: [
-      {instance: '', value: '10'},
-      {instance: '', value: '20'},
-      {instance: '', value: '50'},
-      {instance: '', value: '400'},
+      // TODO: Update for pCELO
+      {instance: '0xD3a07CdC50F4D7C6735783E72a8d3016C2A35F42', value: '10'},
+      {instance: '0xFF81b5492019B4DF3f8DB3Ba55aa1c1F2c7a747d', value: '20'},
+      {instance: '0x0b35A116B68860101bcD3bB4E1138aF684a0C66D', value: '50'},
+      {instance: '0x9F5431380c04F80f07Bd7DB7785491Fe825084D1', value: '400'},
     ],
   },
   rewardSwap: {address: '', poolWeight: 1e11},
