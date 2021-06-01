@@ -1,17 +1,14 @@
-/**
- * This is poofado.cash airdrop for early adopters. In order to claim your POOF token please follow https://poofado.cash/airdrop
- */
-
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
-pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "./NomResolve.sol";
 
-contract Voucher is ERC20("PoofCash voucher for POOF tokens", "vPOOF") {
+contract Voucher is ERC20("PoofCash voucher for POOF tokens", "vPOOF"), NomResolve {
   using SafeMath for uint256;
   using SafeERC20 for IERC20;
 
@@ -26,13 +23,13 @@ contract Voucher is ERC20("PoofCash voucher for POOF tokens", "vPOOF") {
   }
 
   constructor(
-    address _poof,
-    address _governance,
+    bytes32 _poof,
+    bytes32 _governance,
     uint256 _duration,
     Recipient[] memory _airdrops
   ) {
-    poof = IERC20(_poof);
-    governance = _governance;
+    poof = IERC20(resolve(_poof));
+    governance = resolve(_governance);
     expiresAt = blockTimestamp().add(_duration);
     for (uint256 i = 0; i < _airdrops.length; i++) {
       _mint(_airdrops[i].to, _airdrops[i].amount);

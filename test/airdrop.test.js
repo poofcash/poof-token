@@ -49,7 +49,7 @@ contract('Airdrop', (accounts) => {
 
   before(async () => {
     const newAddr = await getNextAddr(airdropDeployer)
-    poof = await Poof.new(accounts[0])
+    poof = await Poof.new([{ to: accounts[0], amount: toWei('100000000') }])
     poof.transfer(newAddr, cap)
     snapshotId = await takeSnapshot()
   })

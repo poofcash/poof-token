@@ -1,7 +1,7 @@
 /* global artifacts, web3, contract */
 require('chai').use(require('bn-chai')(web3.utils.BN)).use(require('chai-as-promised')).should()
-const {takeSnapshot, revertSnapshot} = require('../scripts/ganacheHelper')
-const {toBN} = require('web3-utils')
+const { takeSnapshot, revertSnapshot } = require('../scripts/ganacheHelper')
+const { toBN, toWei } = require('web3-utils')
 const RLP = require('rlp')
 
 const Poof = artifacts.require('./POOFMock.sol')
@@ -22,28 +22,29 @@ contract('Voucher', (accounts) => {
   let poof
   let voucher
   let snapshotId
-  // const owner = accounts[0]
-  // const ownerPrivateKey = '0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d'
   const recipient = accounts[1]
   const governance = accounts[8]
   let startTimestamp
   const duration = toBN(60 * 60 * 24 * 365)
-  const cap = toBN(10000000).mul(toBN(10 ** 18))
+  const cap = toBN(toWei('100000000'))
 
   before(async () => {
     const voucherExpectedAddr = await getNextAddr(accounts[0], 1)
-    poof = await Poof.new(governance)
-    poof.transfer(voucherExpectedAddr, cap, {from: governance})
+    poof = await Poof.new([{ to: voucherExpectedAddr, amount: cap.toString() }])
 
-    voucher = await Voucher.new(poof.address, governance, duration, [
-      {to: accounts[0], amount: cap.toString()},
-    ])
+    voucher = await Voucher.new(
+      poof.address,
+      governance,
+      duration, 
+      [{ to: accounts[0], amount: cap.toString() }]
+    )
 
     startTimestamp = await voucher.blockTimestamp()
     await voucher.setFakeTimestamp(startTimestamp)
     const blockTimestamp = await voucher.blockTimestamp()
     blockTimestamp.should.be.eq.BN(startTimestamp)
 
+    // Transferring should not work
     await voucher.transfer(recipient, cap.div(toBN(10)))
 
     snapshotId = await takeSnapshot()
@@ -66,7 +67,7 @@ contract('Voucher', (accounts) => {
     it('should work', async () => {
       const vPOOFRecipientBalanceBefore = await voucher.balanceOf(recipient)
       const POOFRecipientBalanceBefore = await poof.balanceOf(recipient)
-      await voucher.redeem({from: recipient})
+      await voucher.redeem({ from: recipient })
       const vPOOFRecipientBalanceAfter = await voucher.balanceOf(recipient)
       const POOFRecipientBalanceAfter = await poof.balanceOf(recipient)
 
@@ -76,12 +77,12 @@ contract('Voucher', (accounts) => {
     })
 
     it('can redeem if time has passed', async () => {
-      await voucher.redeem({from: recipient})
+      await voucher.redeem({ from: recipient })
 
       const expiresAt = await voucher.expiresAt()
       await voucher.setFakeTimestamp(expiresAt)
 
-      await voucher.redeem({from: recipient}).should.be.rejectedWith('Airdrop redeem period has ended')
+      await voucher.redeem({ from: recipient }).should.be.rejectedWith('Airdrop redeem period has ended')
     })
   })
 
@@ -91,7 +92,7 @@ contract('Voucher', (accounts) => {
     })
 
     it('should work if time has passed', async () => {
-      await voucher.redeem({from: recipient})
+      await voucher.redeem({ from: recipient })
 
       const expiresAt = await voucher.expiresAt()
       await voucher.setFakeTimestamp(expiresAt)
@@ -108,7 +109,7 @@ contract('Voucher', (accounts) => {
     it('should be paused', async () => {
       const amount = await voucher.balanceOf(recipient)
       await voucher
-        .transfer(accounts[4], amount, {from: recipient})
+        .transfer(accounts[4], amount, { from: recipient })
         .should.be.rejectedWith('ERC20: transfer is not allowed')
     })
   })

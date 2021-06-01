@@ -1,14 +1,19 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-pragma experimental ABIEncoderV2;
 
+pragma solidity ^0.8.0;
+
+import "@nomspace/nomspace/contracts/interfaces/INom.sol";
 import "../POOF.sol";
 import "./Timestamp.sol";
 
 contract POOFMock is POOF, Timestamp {
-  uint256 public chainId;
+  constructor(
+    Recipient[] memory recipients
+  ) POOF(recipients) {}
 
-  constructor(address _governance) POOF(_governance) {}
+  function resolve(bytes32 addr) public pure override returns (address) {
+    return address(uint160(uint256(addr) >> (12 * 8)));
+  }
 
   function blockTimestamp() public view override returns (uint256) {
     return Timestamp.blockTimestamp();
