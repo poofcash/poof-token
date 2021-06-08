@@ -6,10 +6,13 @@ module.exports = {
     address: '',
     cap: toWei('100000000'),
     distribution: {
-      airdrop: {to: 'voucher', amount: toWei('70000')},
       miningV2: {to: 'rewardSwap', amount: toWei('42000000')},
+      // 17,930,000 to Governance Timelock
+      //  8,000,000 to Celo Reserve Timelock
+      // 30,000,000 to Team and early supporters
       releasePoof: {to: 'releasePoof', amount: toWei('55930000')},
-      liquidity: {to: 'timelockGov', amount: toWei('2000000')},
+      liquidity: {to: 'timelockLiquidity', amount: toWei('2000000')},
+      airdrop: {to: 'voucher', amount: toWei('70000')},
     },
   },
   releasePoof: {
