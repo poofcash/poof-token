@@ -3,7 +3,7 @@ const {toWei} = require('web3-utils')
 module.exports = {
   poof: {
     name: 'POOF',
-    address: '0x8d1f9B9e0F672E2a320Ee0B629C9dB58ceeA945c',
+    address: '0x400F742DbEa93DE2760872cAcd936548036A0d54',
     cap: toWei('100000000'),
     distribution: {
       airdrop: {to: 'voucher', amount: toWei('70000')},
@@ -13,18 +13,18 @@ module.exports = {
   },
   releasePoof: {
     name: 'rPOOF',
-    address: '0x0cfD91652bEC47915d3Ec4a94B46709A0fc15668',
+    address: '0x985DdBF2d39331CbAd9C1fb2F06535708979e476',
     releaseStart: 1627920000, // August 2nd, 2021
     cliffDuration: 0, // No cliff
     releaseEnd: 1722268800, // July 29, 2024
   },
   timelockGov: {
     name: 'PoofGovTimelock',
-    address: '0xe7273A2E109A62738279e01Bc999881190C56B18',
+    address: '0x50B3E0932c309B2421cAF26BA535f98ceA119643',
   },
   timelockReserve: {
     name: 'PoofReserveTimelock',
-    address: '0xe7273A2E109A62738279e01Bc999881190C56B18',
+    address: '0xa6f6FFBaa5b91dDA0BE3da4d383f6de8acd7d816',
   },
   airdrop: {
     weights: {
@@ -35,23 +35,23 @@ module.exports = {
   },
   governance: {
     name: 'PoofGov',
-    address: '0x51cA2708D6b6dD610771cAA7b82240673dC9458B',
+    address: '0xD60990Bd8c81EB19D9Be3072e8f8c5B1F547B1CF',
     votingPeriod: 51840, // ~3 days in blocks
     votingDelay: 17280, // ~1 day in blocks
     proposalThreshold: toWei('1000000'), // 1% of all tokens
   },
   governanceImpl: {
     name: 'PoofGovImpl',
-    address: '0x8a535AeDd49761199ec8670F724D1dcC6C2D070f',
+    address: '0x2F02d7daB5A5D71bCda22da9791068B83E0c30AA',
   },
   voucher: {
     name: 'PoofVoucher',
-    address: '0xFCDbF13b8fe9774EbdBb15DED5de71cc55027317',
+    address: '0x8DB09D7Ae4f3e0e2D297c4FeEf2FcF7A329D7978',
     duration: 2592000 * 6, // 6 months
   },
   miningV2: {
     name: 'PoofMiner',
-    address: '0x643902397cC5D6B51Fa7e106cFCc4D0C6adf11Cb',
+    address: '0xB9260dBd600F205d7A1161c75602520909cfb3b4',
     releaseStart: 1627920000, // August 2nd, 2021
     firstPeriodDistribution: toWei('21333333'),
     periodDurationInSeconds: 15724800,
@@ -89,37 +89,37 @@ module.exports = {
   },
   rewardSwap: {
     name: 'PoofRewardSwap',
-    address: '0x2C2D7cD483FC43c22559Ae354D454A950b3bc9e9',
+    address: '0x951C948EdA202653058F826D6D9D917e63CA5454',
     poolWeight: 1e11,
   },
   tornadoTrees: {
     name: 'PoofTrees',
-    address: '0x803Aa900D9A40EE3e44bEaA5C4bD81Be52af9A1e',
+    address: '0xD3d4937f6e0ED87aF9915B232FBe7c83F816E3Fe',
     levels: 20,
   },
   tornadoProxy: {
     name: 'PoofProxy',
-    address: '0x1F1338adA4Aa5FBad065B10F8AfCa6B2D468E6c9',
+    address: '0x118eC903Bb4b00DF2a2bBDbCc44d130045FED7c7',
   },
   rewardVerifier: {
     name: 'PoofRewardVerifier',
-    address: '0xe0E6594Cae8e09aA0D88fc4BC308259E7fE7e0b6',
+    address: '0xA03BBAA4aCa9aC37196332f8bE1a07c61BfA8aDb',
   },
   treeUpdateVerifier: {
     name: 'PoofTreeVerifier',
-    address: '0xb317397a183Fbf8366c12A115e5AB71c1F0Cba73',
+    address: '0x9E8E0342cafb36a04e2F0010C71c9B4fc4cF615d',
   },
   withdrawVerifier: {
     name: 'PoofWithdrawVerifier',
-    address: '0x99592cAdf5607150E75838002799FA2C36b73747',
+    address: '0x3813dbc68b9F5Ae01F9870481e7E3cf33954C620',
   },
   poseidonHasher2: {
     name: 'PoofPoseidon2',
-    address: '0x7EABdBF8d845f499b519eba012535161E29e4ed1',
+    address: '0xe90167f05933CA1BCF274adb6fBA3Bc4F10BA5c1',
   },
   poseidonHasher3: {
     name: 'PoofPoseidon3',
-    address: '0xf990B0e2c30e0136C7F5A163A51deC409051C28b',
+    address: '0x209D1dcE4310c43042E869aD2884B4132aB15DF7',
   },
   deployer: {address: '0xfcbbd4CA98C21013F4F27993689D849e8D46FBa6'},
   vesting: {
