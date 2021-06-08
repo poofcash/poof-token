@@ -52,6 +52,7 @@ module.exports = {
   miningV2: {
     name: 'PoofMiner',
     address: '0x643902397cC5D6B51Fa7e106cFCc4D0C6adf11Cb',
+    releaseStart: 1627920000, // August 2nd, 2021
     firstPeriodDistribution: toWei('21333333'),
     periodDurationInSeconds: 15724800,
     numPeriods: 6,
