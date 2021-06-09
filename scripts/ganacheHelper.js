@@ -36,6 +36,16 @@ const increaseTime = async (seconds) => {
   await send('evm_increaseTime', [seconds])
 }
 
+async function setTime(seconds) {
+  await send('evm_setTime', [new Date(seconds * 1000)])
+  await send('evm_mine')
+}
+
+async function freezeTime(seconds) {
+  await send('evm_freezeTime', [seconds])
+  await send('evm_mine')
+}
+
 const minerStop = async () => {
   await send('miner_stop', [])
 }
@@ -51,5 +61,7 @@ module.exports = {
   minerStop,
   minerStart,
   increaseTime,
+  setTime,
+  freezeTime,
   traceTransaction,
 }
