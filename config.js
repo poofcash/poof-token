@@ -7,9 +7,9 @@ module.exports = {
     cap: toWei('100000000'),
     distribution: {
       miningV2: {to: 'rewardSwap', amount: toWei('42000000')},
-      releasePoof: {to: 'releasePoof', amount: toWei('30000000')},
-      governance: {to: 'allocatorGov', amount: toWei('25930000')},
+      governance: {to: 'allocatorGov', amount: toWei('17930000')},
       reserve: {to: 'allocatorReserve', amount: toWei('8000000')},
+      releasePoof: {to: 'releasePoof', amount: toWei('30000000')},
       liquidity: {to: 'timelockLiquidity', amount: toWei('2000000')},
       airdrop: {to: 'voucher', amount: toWei('70000')},
     },
