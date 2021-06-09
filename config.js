@@ -7,10 +7,9 @@ module.exports = {
     cap: toWei('100000000'),
     distribution: {
       miningV2: {to: 'rewardSwap', amount: toWei('42000000')},
-      // 17,930,000 to Governance Timelock
-      //  8,000,000 to Celo Reserve Timelock
-      // 30,000,000 to Team and early supporters
-      releasePoof: {to: 'releasePoof', amount: toWei('55930000')},
+      releasePoof: {to: 'releasePoof', amount: toWei('30000000')},
+      governance: {to: 'allocatorGov', amount: toWei('25930000')},
+      reserve: {to: 'allocatorReserve', amount: toWei('8000000')},
       liquidity: {to: 'timelockLiquidity', amount: toWei('2000000')},
       airdrop: {to: 'voucher', amount: toWei('70000')},
     },
@@ -33,6 +32,16 @@ module.exports = {
   timelockLiquidity: {
     name: 'PoofLiquidityTimelock',
     address: '',
+  },
+  allocatorGov: {
+    name: 'PoofGovAllocator',
+    releaseStart: 1627920000, // August 2nd, 2021
+    releaseEnd: 1722268800, // July 29, 2024
+  },
+  allocatorReserve: {
+    name: 'PoofReserveAllocator',
+    releaseStart: 1627920000, // August 2nd, 2021
+    releaseEnd: 1722268800, // July 29, 2024
   },
   airdrop: {
     weights: {
