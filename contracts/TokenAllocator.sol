@@ -49,11 +49,15 @@ contract TokenAllocator is LinearReleaseSchedule {
 
   // @dev Number of tokens available to be claimed
   function getClaimable() public view returns (uint256) {
-    uint256 currentTimestamp = block.timestamp;
+    uint256 currentTimestamp = blockTimestamp();
     uint256 released = this.getCumulativeTokens(currentTimestamp);
     if (released <= amountClaimed) {
       return 0;
     }
     return released.sub(amountClaimed);
+  }
+
+  function blockTimestamp() public view virtual returns (uint256) {
+    return block.timestamp;
   }
 }
