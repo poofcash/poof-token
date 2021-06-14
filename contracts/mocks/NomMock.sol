@@ -11,7 +11,7 @@ contract NomMock is Nom, IFeeModule {
 
   constructor() Nom(IFeeModule(address(this))) {}
 
-  function pay(uint256 durationToReserve) override external pure returns (bool success) {
+  function pay(address, uint256) override external pure returns (bool success) {
     return true;
   }
 }

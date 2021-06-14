@@ -39,7 +39,7 @@
     "truffle-plugin-verify": "^0.3.11"
   },
   "dependencies": {
-    "@nomspace/nomspace": "^1.0.0",
+    "@nomspace/nomspace": "^1.0.3",
     "@openzeppelin/contracts": "^4.1.0",
     "@ubeswap/governance": "git+https://github.com/Ubeswap/ubeswap-governance.git",
     "eth-sig-util": "^2.5.3",
