@@ -7,7 +7,7 @@ import "@nomspace/nomspace/contracts/interfaces/INom.sol";
 contract NomResolve {
   function resolve(bytes32 name) public view virtual returns (address) {
     INom nom = INom(
-      computeChainId() == 42220 ? 0xF88fc5616E20Bab3E765ea8c5FCB182320325Ae1 : 0xd02b161c538902CF56Ad05062809F9130ba74B22 
+      computeChainId() == 42220 ? 0xABf8faBbC071F320F222A526A2e1fBE26429344d : 0x36C976Da6A6499Cad683064F849afa69CD4dec2e
     );
     return nom.resolve(name);
   }
