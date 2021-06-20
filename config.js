@@ -63,7 +63,7 @@ module.exports = {
   },
   voucher: {
     name: 'PoofVoucher',
-    address: '',
+    address: '0x31E28B9208E627B9714596A83E97a9a7dB08b758',
     duration: 2592000 * 6, // 6 months
   },
   miningV2: {
