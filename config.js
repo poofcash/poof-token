@@ -83,7 +83,6 @@ const miningRates = {
 module.exports = {
   poof: {
     name: 'POOF',
-    address: '0x400F8F7C1AB92F9A8AbCbf4b2A97d609E13f2f79',
     cap: toWei('100000000'),
     distribution: {
       miningV2: { to: 'rewardSwap', amount: toWei('42000000') },
@@ -96,22 +95,18 @@ module.exports = {
   },
   releasePoof: {
     name: 'rPOOF',
-    address: '',
     releaseStart: 1625130000, // July 1, 2021
     cliffDuration: 0, // No cliff
     releaseEnd: 1719478800, // June 27, 2024
   },
   timelockGov: {
     name: 'PoofGovTimelock',
-    address: '',
   },
   timelockReserve: {
     name: 'PoofReserveTimelock',
-    address: '',
   },
   timelockLiquidity: {
     name: 'PoofLiquidityTimelock',
-    address: '',
   },
   allocatorGov: {
     name: 'PoofGovAllocator',
@@ -132,28 +127,19 @@ module.exports = {
   },
   governance: {
     name: 'PoofGov',
-    address: '',
     votingPeriod: 120960, // ~7 days in blocks
     votingDelay: 17280, // ~1 day in blocks
     proposalThreshold: toWei('1000000'), // 1% of all tokens
   },
   governanceImpl: {
     name: 'PoofGovImpl',
-    address: '',
   },
   voucher: {
     name: 'PoofVoucher',
-    address: '0x31E28B9208E627B9714596A83E97a9a7dB08b758',
-    duration: 2592000 * 6, // 6 months
+    duration: 60 * 60 * 24 * 7 * 26, // 26 weeks
   },
   miningV2: {
     name: 'PoofMiner',
-    netId42220: {
-      address: '',
-    },
-    netId44787: {
-      address: '0x0eB2bc98DD64BE563EA4Df7f8DdE519543BDE9F7',
-    },
     releaseStart: 1622505600, // June 1, 2021
     firstPeriodDistribution: toWei('21333333'),
     periodDurationInSeconds: 15724800,
@@ -162,44 +148,30 @@ module.exports = {
   },
   rewardSwap: {
     name: 'PoofRewardSwap',
-    address: '0x1F05973792905991b9593078629d17833007A757',
     poolWeight: 1e12,
   },
   tornadoTrees: {
     name: 'PoofTrees',
-    address: '0x2cdc0dCD8a17BeDCD74CE68E7dE91707714c0eC1',
     levels: 20,
   },
   tornadoProxy: {
     name: 'PoofProxy',
-    netId42220: {
-      address: '',
-    },
-    netId44787: {
-      address: '0xD150657aeaa9E6e63C35d8E988d012E4547AedA2',
-    },
   },
   rewardVerifier: {
     name: 'PoofRewardVerifier',
-    address: '',
   },
   treeUpdateVerifier: {
     name: 'PoofTreeVerifier',
-    address: '',
   },
   withdrawVerifier: {
     name: 'PoofWithdrawVerifier',
-    address: '',
   },
   poseidonHasher2: {
     name: 'PoofPoseidon2',
-    address: '',
   },
   poseidonHasher3: {
     name: 'PoofPoseidon3',
-    address: '',
   },
-  deployer: { address: '0x60483A552391b4388C1F03af4cEf38e51ab00FA2' },
   feeManager: {
     netId42220: {
       address: '0x7DA532a6F59232936320011106585521B9F18362',
