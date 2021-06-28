@@ -140,7 +140,7 @@ module.exports = {
   },
   miningV2: {
     name: 'PoofMiner',
-    releaseStart: 1622505600, // June 1, 2021
+    releaseStart: 1625130000, // July 1, 2021
     firstPeriodDistribution: toWei('21333333'),
     periodDurationInSeconds: 15724800,
     numPeriods: 6,
